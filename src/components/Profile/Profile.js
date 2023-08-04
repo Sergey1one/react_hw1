@@ -1,33 +1,33 @@
 import PropTypes from 'prop-types';
-import {ProfileStyle,Name} from './Profile.style'
+import {AvatarImg, Description, ProfileStyle,Tag,UserName, LocationP, Stats,StatItem, Label, Quantity} from './Profile.styled'
 
 export default function Profile({ username, tag, location, avatar, followers, views, likes }) {
     return <ProfileStyle>
-        <div class="description">
-            <img
+        <Description>
+            <AvatarImg
                 src={avatar}
                 alt={username}
                 class="avatar"
             />
-            <Name>{username}</Name>
-            <p class="tag">@{tag}</p>
-            <p class="location">{location}</p>
-        </div>
+            <UserName>{username}</UserName>
+            <Tag>@{tag}</Tag>
+            <LocationP>{location}</LocationP>
+        </Description>
 
-        <ul class="stats">
-            <li>
-                <span class="label">Followers</span>
-                <span class="quantity">{followers}</span>
-            </li>
-            <li>
-                <span class="label">Views</span>
-                <span class="quantity">{views}</span>
-            </li>
-            <li>
-                <span class="label">Likes</span>
-                <span class="quantity">{likes}</span>
-            </li>
-        </ul>
+        <Stats>
+            <StatItem>
+                <Label>Followers</Label>
+                <Quantity>{followers}</Quantity>
+            </StatItem>
+            <StatItem>
+                <Label>Views</Label>
+                <Quantity>{views}</Quantity>
+            </StatItem>
+            <StatItem>
+                <Label>Likes</Label>
+                <Quantity>{likes}</Quantity>
+            </StatItem>
+        </Stats>
     </ProfileStyle>
 }
 
